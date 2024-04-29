@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type ID int
-
+	
 var (
 	a string  //por padrão é vazio " "
 	b bool    //por padrão ele é false
