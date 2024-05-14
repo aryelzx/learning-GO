@@ -10,7 +10,19 @@ valor, err := sum3(20, 10)
 
 	fmt.Println(valor) //se não encontra erro, printa o valor
 
+	//funções variádicas
 	fmt.Println(sum4(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+
+	//closures
+	closure()() //chamando a função closure
+	chamarFuncClosre := closure() // Chama a função closure e atribui o resultado a minhaFuncao
+	chamarFuncClosre() // Chama a função retornada pelo closure
+
+	total := func() int {
+		return sum4(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) * 2
+	}()
+	fmt.Println(total)
+
 }
 	
 func sum3(a, b int) (int, error) {
@@ -28,4 +40,15 @@ func sum4(numeros ...int) int {
 	}
 	return total
 }
+
+// =================== closures ========================
+func closure() func() {
+	texto := "Dentro da função closure"
+	funcao := func() {
+		fmt.Println(texto)
+	}
+	return funcao
+}
+
+
 
