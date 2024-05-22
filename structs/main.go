@@ -15,6 +15,18 @@ type Pessoa struct {
 	Profissao string
 	Ativo     bool
 	Adress    Endereco
+	Cliente
+}
+
+type Cliente struct {
+	Convenio string
+	Planos   []string
+	Endereco
+}
+
+func (p Pessoa) Desativar() {
+	p.Ativo = false
+	fmt.Printf("O cliente %s foi desativado, %v", p.Nome, p.Ativo)
 }
 
 func main() {
@@ -38,4 +50,8 @@ func main() {
 	fmt.Println("Nova Profissão:", aryel.Profissao)
 	//acessando o campo da struct Endereco
 	fmt.Println("Cidade:", aryel.Adress.Cidade)
+
+	//acessando o método da struct cliente
+	aryel.Desativar()
+
 }
