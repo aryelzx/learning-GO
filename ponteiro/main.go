@@ -2,6 +2,19 @@ package main
 
 import "fmt"
 
+func soma(a, b *int) int {
+	*a = 50 //atribui novo valor da memória
+	return *a + *b
+
+}
+
+func Memory() {
+	minhaVar1 := 10
+	minhaVar2 := 20
+	println(minhaVar1)                    //return 10
+	println(soma(&minhaVar1, &minhaVar2)) //return 50 + 20 = 70
+}
+
 func main() {
 	// Memória -> Endereço -> Valor
 
@@ -10,8 +23,8 @@ func main() {
 	var pointer *int = &a
 	*pointer = 20
 	b := &a
-	fmt.Println(b)
-	fmt.Println(pointer)
+	fmt.Println(b, "=>", *b)
+	fmt.Println(pointer, "=>", *pointer)
 
 	i, j := 42, 2701
 
@@ -23,4 +36,6 @@ func main() {
 	p = &j         // point to j
 	*p = *p / 37   // divide j through the pointer
 	fmt.Println(j) // see the new value of j
+
+	Memory()
 }
