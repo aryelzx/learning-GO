@@ -2,10 +2,18 @@ package main
 
 import "fmt"
 
+type Conta struct {
+	saldo int
+}
+
+func (c *Conta) simular(valor int) int {
+	c.saldo += valor
+	return c.saldo
+}
+
 func soma(a, b *int) int {
 	*a = 50 //atribui novo valor da memória
 	return *a + *b
-
 }
 
 func Memory() {
