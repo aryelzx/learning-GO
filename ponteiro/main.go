@@ -11,6 +11,10 @@ func (c *Conta) simular(valor int) int {
 	return c.saldo
 }
 
+func NewConta() *Conta {
+	return &Conta{saldo: 0}
+}
+
 func soma(a, b *int) int {
 	*a = 50 //atribui novo valor da memória
 	return *a + *b
@@ -46,4 +50,10 @@ func main() {
 	fmt.Println(j) // see the new value of j
 
 	Memory()
+
+	conta := Conta{
+		saldo: 100,
+	}
+	conta.simular(200)
+	println(conta.saldo)
 }
