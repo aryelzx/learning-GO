@@ -2,9 +2,9 @@ package main
 
 import "fmt"
 
-{/*
-	Trata e aceita qualquer tipo. *Generics substitui interfaces vazias*	
-*/}
+/*
+	Trata e aceita qualquer tipo. *Generics substitui interfaces vazias*
+*/
 
 func main() {
 	var x interface{} = 10
